@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Geometric progression</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sum1(digits) {
+			var arr = digits.split(' ');
+			var sum = 0;
+			
+			for (var i = 0; i < arr.length; ++i) { 
+				sum += +arr[i];
+			}
+
+			document.getElementById('sump').innerHTML = "Сумма n первых членов геом прогрессии: " + sum;
+		}
+
+		function sum2(b1, q, n) {
+			var sum = b1 * (Math.pow(q, n) - 1) / (q - 1);
+
+			document.getElementById('sump').innerHTML = "Сумма n первых членов геом прогрессии: " + sum;
+		}
+	</script>
+
+	<p>Введите геометрическую прогрессию:</p>
+	<input type="text" id="arr" onchange="sum1(arr.value)">
+	<p>ИЛИ</p>
+	<p>Введите b1, q, n:</p>
+	<input type="text" placeholder="b1" id="b1">
+	<input type="text" placeholder="q" id="q">
+	<input type="text" placeholder="n" id="n" onchange="sum2(b1.value, q.value, n.value)">
+	<br><br>
+	<input type="button" value="СУММА">
+	<br><br>
+	<div id = "sump"></div>
+</body>
+</html>
