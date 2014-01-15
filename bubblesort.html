@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bubblesort</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function bubblesort(digits){
+			var arr = digits.split(' ');
+    		for(var i = 0; i < arr.length - 1; i++){
+				for (var j = 0; j < arr.length - i - 1; j++){
+					if (arr[j+1] < arr[j]) {
+					var tmp = arr[j+1]; 
+						arr[j+1] = arr[j];  
+						arr[j] = tmp;
+					} 
+				}
+			}
+		document.getElementById('arriv').innerHTML = "Отсортированный массив: " + arr.join(" ");
+		}
+	</script>
+
+	<p>Введите массив через пробел:</p>
+	<input type="text" id="arr" onchange="bubblesort(arr.value)">
+	<input type="button" value="Отсортировать">
+	<p></p>
+	<div id = "arriv"></div>
+</body>
+</html>
