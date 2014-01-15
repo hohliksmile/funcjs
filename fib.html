@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fibonacci</title>
+</head>
+<body>
+	<script>
+		function fib(n){
+			var a = 0, b = 1;
+			for (var i = 3; i <= n; i++) {
+				var c = a + b;
+			    a = b;
+			    b = c;
+			}
+
+		document.getElementById('num').innerHTML = "Число Фибоначчи: " + b;
+		}
+	</script>
+
+	<p>Введите порядкоый номер для числа Фибоначчи:</p>
+	<input type="text" id="n" onchange="fib(n.value)">
+	<input type="button" value="Вычислить">
+	<p></p>
+	<div id = "num"></div>
+</body>
+</html>
